@@ -1,0 +1,9 @@
+{
+	"name": "la1tv-CGAssets",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "*",
+		"socket.io": "*",
+		"underscore": "*"
+	}
+}
