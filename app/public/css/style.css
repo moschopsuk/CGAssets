@@ -1,1 +1,77 @@
- 
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #f6f6f6;
+}
+
+.m-b-reset{
+	margin-bottom: 0px !important;
+}
+
+.padding-reset{
+	padding: 0px !important;
+}
+
+.ui .message{
+	padding-top: 30px !important;
+	padding-bottom:  50px !important;
+}
+
+.m-top-10{
+	margin-top: 10px !important;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+.ui .button{
+	text-transform: capitalize;
+}
+
+.ui.grid {
+	margin-right: 0rem;
+}
+
+/* =============== [Site Header] =============== */
+.top-header h1 {
+	font-size: 4rem;
+	color: #fff;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.ui.top-header.menu {
+	background-color: #cc0022;
+	box-shadow: none;
+	border-radius: 0rem;
+}
+
+/* =============== [Navigation] =============== */
+.stripe.inverted {
+	background-color: #333;
+	padding-bottom: 50px;
+}
+
+.ui.icon.header.white a {
+	display: block;
+	padding: 15px 10px 5px;
+	color: #fff;
+	border-radius: 6px;
+}
+
+.ui.icon.header.white a:hover {
+	color: #fff;
+	background-color: #555;
+}
+
+.ui.icon.header .icon {
+  font-size: 2em;
+}
+
+/* =============== [Main Content] =============== */
+.ui.grid.top-take-50 {
+	margin-top: -70px !important;
+}
+
+.main-content {
+	width: 75%;
+}
