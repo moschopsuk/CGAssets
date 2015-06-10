@@ -1,5 +1,4 @@
 body{
-	font-family: 'Open Sans', sans-serif;
 	background-color: #f6f6f6;
 }
 
@@ -34,9 +33,13 @@ body{
 
 /* =============== [Site Header] =============== */
 .top-header h1 {
-	font-size: 4rem;
-	color: #fff;
-    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+	font-size: 5rem;
+	background-color: #000;
+  	color: transparent;
+  	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+  	-webkit-background-clip: text;
+     -moz-background-clip: text;
+          background-clip: text;
 }
 
 .ui.top-header.menu {
@@ -51,25 +54,29 @@ body{
 	padding-bottom: 50px;
 }
 
-.ui.icon.header.white a {
+.ui.icon.white a {
 	display: block;
 	padding: 15px 10px 5px;
 	color: #fff;
 	border-radius: 6px;
 }
 
-.ui.icon.header.white a:hover {
+.ui.icon.white a:hover {
 	color: #fff;
 	background-color: #555;
 }
 
-.ui.icon.header .icon {
-  font-size: 2em;
+.ui.icon.white .icon {
+  font-size: 1.5em;
 }
 
 /* =============== [Main Content] =============== */
+.ui.segment h1 {
+	border-bottom: 1px solid #333;
+}
+
 .ui.grid.top-take-50 {
-	margin-top: -70px !important;
+	margin-top: -65px !important;
 }
 
 .main-content {
