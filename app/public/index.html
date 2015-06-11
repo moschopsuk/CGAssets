@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-  <html lang="en">
+  <html lang="en" ng-app="DashboardApp">
   <head>
     <meta charset="utf-8">
     <title>LA1:TV - CG Dashboard</title>
@@ -16,7 +16,7 @@
     <!-- import custom css -->
     <link rel="stylesheet" href="/css/style.css">
   </head>
-  <body>
+  <body ng-controller="DashCtrl">
     <nav class="ui menu navbar top-header centered page grid">
       <h1>LA1:TV</h1>
     </nav>
@@ -52,8 +52,11 @@
     <script src="/js/libs/semantic.js"></script>
 
     <!-- AngularJS Libs -->
-    <script src="/libs/angular/angular.js"></script>
-    <script src="/libs/angular/angular-animate.js"></script>
-    <script src="/libs/angular/angular-route.js"></script>
+    <script src="/js/libs/angular/angular.js"></script>
+    <script src="/js/libs/angular/angular-animate.js"></script>
+    <script src="/js/libs/angular/angular-route.js"></script>
+
+    <!-- App JS Files -->
+    <script src="/js/dashboard.js"></script>
   </body>
 </html>
