@@ -3,6 +3,19 @@ var app = angular.module('DashboardApp', ['ngRoute']);
 app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){
         $log.info("LA1TV CG Dashboard Started");
+
+        $scope.menu = [
+            {
+                name:   'Lower Thirds',
+                icon:   'tasks',
+                url:    '/lowerthirds',
+            },
+            {
+                name:   'Bug',
+                icon:   'bug',
+                url:    '/bug',
+            },
+        ];
     }
 ]);
 

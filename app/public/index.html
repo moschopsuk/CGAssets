@@ -24,15 +24,16 @@
     <div class="ui stripe inverted">
       <div class="row">
         <div class="ui doubling twelve centered column grid">
-
-          <div class="column">
-            <div class="ui icon header white"><a href="/#/test"><i class="tasks icon"></i>Lower Thirds</a></div>
+        <!-- Begin Menu Repeat -->
+          <div ng-repeat="section in menu"  class="column">
+            <div class="ui icon header white">
+              <a ng-href="#{{section.url}}">
+                <i ng-class="section.icon" class="icon"></i>
+                {{ section.name }}
+              </a>
+            </div>
           </div>
-
-          <div class="column">
-            <div class="ui icon header white"><a href="/#/test"><i class="bug icon"></i>Bug</a></div>
-          </div>
-
+          <!-- End menu -->
         </div>
       </div>
     </div>
