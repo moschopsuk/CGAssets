@@ -4,6 +4,10 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){
         $log.info("LA1TV CG Dashboard Started");
 
+        $scope.isActive = function (viewLocation) { 
+            return viewLocation === $location.path();
+        };
+
         $scope.menu = [
             {
                 name:   'Lower Thirds',

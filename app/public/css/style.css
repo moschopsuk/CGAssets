@@ -61,7 +61,7 @@ body{
 	border-radius: 6px;
 }
 
-.ui.icon.white a:hover {
+.ui.icon.white a:hover, .ui.icon.white .active {
 	color: #fff;
 	background-color: #555;
 }

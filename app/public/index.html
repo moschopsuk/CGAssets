@@ -27,7 +27,7 @@
         <!-- Begin Menu Repeat -->
           <div ng-repeat="section in menu"  class="column">
             <div class="ui icon header white">
-              <a ng-href="#{{section.url}}">
+              <a ng-href="#{{section.url}}" ng-class="{active:isActive(section.url)}">
                 <i ng-class="section.icon" class="icon"></i>
                 {{ section.name }}
               </a>
