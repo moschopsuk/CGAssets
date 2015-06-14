@@ -1,6 +1,55 @@
-      <div class="column">
-        <div class="ui segment">
-          <h1>Test Page</h1>
-          <p>Third section of content</p>
-        </div> 
-      </div>
+    <div class="column">
+        <div class="ui grid segment">
+            <div class="five wide column">
+                <h1>Add Lower Third</h1>
+                <form name="lowerThirdsForm" method="post">
+                    <div class="ui form">
+                        <div class="field">
+                            <label>Heading</label>
+                            <input placeholder="Heading" type="text" ng-trim="true" ng-model="lowerThird.heading">
+                        </div>
+
+                        <div class="field">
+                            <label>Sub-Heading</label>
+                            <input placeholder="Sub Heading" type="text" ng-trim="true" ng-model="lowerThird.subHeading">
+                        </div>
+
+                        <div class="ui blue button" ng-disabled="lowerThirdsForm.$invalid" ng-click="add(lowerThird)" >Add</div>
+                    </div>
+                </form>
+            </div>
+            <div class="eleven wide column">
+                <h1>Existing Lower Thirds</h1>
+
+                <div class="ui segment" ng-repeat="third in queuedThirds">
+                    <div class="ui grid">
+                        <div class="six wide column">
+                            <h2 class="left aligned ui header">
+                                <i class="list layout icon"></i>
+                                <div class="content">
+                                    {{third.heading}}
+                                    <div class="sub header">{{third.subHeading}}</div>
+                                </div>
+                            </h2>
+                        </div>
+
+                        <div class="two wide column"></div>
+
+                        <div class="two wide column"></div>
+
+                        <div class="right aligned six wide column">
+                            <div class="ui small buttons">
+                                <div class="ui positive button" ng-click="show('left', third)" >Left</div>
+                                <div class="or"></div>
+                                <div class="ui positive button" ng-click="show('right', third)" >Right</div>
+                            </div>
+
+                            <div class="ui icon red small button">
+                                <i class="delete icon" ng-click='remove($index)'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
