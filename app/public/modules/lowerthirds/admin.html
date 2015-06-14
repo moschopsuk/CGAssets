@@ -6,15 +6,15 @@
                     <div class="ui form">
                         <div class="field">
                             <label>Heading</label>
-                            <input placeholder="Heading" type="text" ng-trim="true" ng-model="lowerThird.heading">
+                            <input name="heading" placeholder="Heading" type="text" ng-trim="true" ng-model="lowerThird.heading" required />
                         </div>
 
                         <div class="field">
                             <label>Sub-Heading</label>
-                            <input placeholder="Sub Heading" type="text" ng-trim="true" ng-model="lowerThird.subHeading">
+                            <input name="subHeading" placeholder="Sub Heading" type="text" ng-trim="true" ng-model="lowerThird.subHeading" />
                         </div>
 
-                        <div class="ui blue button" ng-disabled="lowerThirdsForm.$invalid" ng-click="add(lowerThird)" >Add</div>
+                        <button class="ui blue button" ng-disabled="lowerThirdsForm.$invalid" ng-click="add(lowerThird)" >Add</button>
                     </div>
                 </form>
             </div>
@@ -44,9 +44,9 @@
                                 <div class="ui positive button" ng-click="show('right', third)" >Right</div>
                             </div>
 
-                            <div class="ui icon red small button">
-                                <i class="delete icon" ng-click='remove($index)'></i>
-                            </div>
+                            <button class="ui icon red small button" ng-click='remove($index)'>
+                                <i class="delete icon"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
