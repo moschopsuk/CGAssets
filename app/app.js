@@ -1,4 +1,5 @@
 var express = require('express');
+var socket	= require('socket.io');
 var app 	= express();
 
 //Serve content out of public dir
@@ -8,8 +9,16 @@ var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('LA1:TV CG app listening at http://%s:%s', host, port);
 });
+
+var io = socket.listen(server);
+
+io.on('connection', function(socket) {
+	console.log("Client Socket Connected");
+});
+
+
 
 
 
