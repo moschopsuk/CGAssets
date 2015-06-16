@@ -15,6 +15,9 @@
                         </div>
 
                         <button class="ui blue button" ng-disabled="lowerThirdsForm.$invalid" ng-click="add(lowerThird)" >Add</button>
+
+                        <!-- Must be div not button to prevent validationj trigger -->
+                        <div class="ui icon red button" ng-click='hide()'>Hide</div>
                     </div>
                 </form>
             </div>
