@@ -16,6 +16,11 @@ var io = socket.listen(server);
 
 io.on('connection', function(socket) {
 	console.log("Client Socket Connected");
+
+	//Forward data to frontend
+	socket.on("lowerthird", function(payload) {
+		io.sockets.emit("lowerthird", payload);
+	});
 });
 
 

@@ -1,7 +1,7 @@
-app.controller('lowerthirdsCtrl', ['$scope',
-    function($scope){
+app.controller('lowerthirdsCtrl', ['$scope', '$log', 'socket',
+    function($scope, $log, socket){
 
- 		$scope.queuedThirds = [];
+        $scope.queuedThirds = [];
 
         $scope.add = function(item) {
             $scope.queuedThirds.push(item);
@@ -15,9 +15,17 @@ app.controller('lowerthirdsCtrl', ['$scope',
         };
 
         $scope.show = function(side, item) {
+            var payload = { "side": side, item };
+            socket.emit('lowerthird', payload);
+
+            $log.info("lowerthirds.show()");
+            $log.info(payload);
         };
 
         $scope.hide = function() {
+            socket.emit('lowerthird', 'hide');
+
+            $log.info("lowerthirds.hide()");
         };
     }
 ]);
