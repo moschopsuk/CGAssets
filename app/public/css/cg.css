@@ -1,0 +1,74 @@
+/**************************************************/
+/*              [Caspcar CG Page]                 */
+/**************************************************/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing:border-box;                                   /* This sets all elements to be the actual set dimensions, disregarding padding and borders */
+  -webkit-backface-visibility: hidden;                     /* Hide the backface of elements - usuefull for 3d effects */
+  -webkit-transition: translate3d(0,0,0);                  /* Turns on hardware acceleration - not known to be of benefit in CCG, but won't hurt */
+}
+
+body {
+    padding: 50px; /* Safe area */
+    font-family: 'Montserrat', sans-serif;
+    background:transparent;                          /* The HTML consumer actually makes your background transparent by default, unless a color or image is specified - but this might be usefull when debugging in browsers */
+    overflow:hidden;                                 /* Hide any overflowing elements - to disable scollbars */
+    -webkit-font-smoothing:antialiased !important;   
+}
+
+/**************************************************/
+/*              [Layout]                          */
+/**************************************************/
+.left{
+    position: absolute;
+    left: 50px;
+}
+
+.right {
+    position: absolute;
+    right: 50px;
+    text-align: right;
+}
+
+.bottom {
+    bottom: 50px;
+}
+
+.top {
+    top: 50px;
+}
+
+.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.row:after {
+  display: table;
+  content: " ";
+}
+
+.row:after {
+  clear: both;
+}
