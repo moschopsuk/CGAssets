@@ -1,4 +1,4 @@
-var app = angular.module('DashboardApp', ['ngRoute', 'socket-io']);
+var app = angular.module('DashboardApp', ['ngRoute', 'socket-io', 'ngAnimate']);
 
 app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){

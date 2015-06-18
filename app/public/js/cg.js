@@ -1,1 +1,1 @@
-var app = angular.module('CGApp', ['ngRoute', 'socket-io']);
+var app = angular.module('CGApp', ['ngAnimate', 'socket-io']);
