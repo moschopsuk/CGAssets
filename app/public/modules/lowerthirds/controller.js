@@ -14,8 +14,8 @@ app.controller('lowerthirdsCtrl', ['$scope', '$log', 'socket',
             $scope.queuedThirds.splice(index, 1);
         };
 
-        $scope.show = function(side, item) {
-            var payload = { "side": side, item };
+        $scope.show = function(side, data) {
+            var payload = { "side": side, data };
             socket.emit('lowerthird', payload);
 
             $log.info("lowerthirds.show()");
