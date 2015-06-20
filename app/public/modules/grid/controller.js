@@ -1,7 +1,18 @@
-app.controller('gridCtrl', ['$scope', '$log', 'socket',
-    function($scope, $log, socket){
-        $scope.grid = {};
-        $scope.grid.rows = [];
+app.controller('gridCtrl', ['$scope', '$log', 'socket', 'localStorageService',
+    function($scope, $log, socket, localStorageService){
+
+        var stored = localStorageService.get('grid');
+
+        if(stored === null) {
+            $scope.grid = {};
+            $scope.grid.rows = [];
+        } else {
+            $scope.grid = stored;
+        }
+
+        $scope.$on("$destroy", function() {
+            localStorageService.set('grid', $scope.grid);
+        });
 
         $scope.add = function() {
             $scope.grid.rows.push({left:'', right:''});

@@ -1,7 +1,17 @@
-app.controller('lowerthirdsCtrl', ['$scope', '$log', 'socket',
-    function($scope, $log, socket){
+app.controller('lowerthirdsCtrl', ['$scope', '$log', 'socket', 'localStorageService',
+    function($scope, $log, socket, localStorageService){
 
-        $scope.queuedThirds = [];
+        var stored = localStorageService.get('lowerthirds');
+
+        if(stored === null) {
+            $scope.queuedThirds = [];
+        } else {
+            $scope.queuedThirds = stored;
+        }
+
+        $scope.$on("$destroy", function() {
+            localStorageService.set('lowerthirds', $scope.queuedThirds);
+        });
 
         $scope.add = function(item) {
             $scope.queuedThirds.push(item);
