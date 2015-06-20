@@ -25,6 +25,10 @@ io.on('connection', function(socket) {
 	socket.on("grid", function(payload) {
 		io.sockets.emit("grid", payload);
 	});
+
+	socket.on("bug", function(payload) {
+		io.sockets.emit("bug", payload);
+	});
 });
 
 

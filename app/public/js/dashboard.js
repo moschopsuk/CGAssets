@@ -1,4 +1,4 @@
-var app = angular.module('DashboardApp', ['ngRoute', 'socket-io', 'ngAnimate', 'LocalStorageModule']);
+var app = angular.module('DashboardApp', ['ngRoute', 'socket-io', 'ngAnimate', 'LocalStorageModule', 'angularify.semantic']);
 
 app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){
@@ -19,6 +19,11 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
                 icon:   'grid layout',
                 url:    '/grid',
             },
+            {
+                name:   'Bug',
+                icon:   'bug',
+                url:    '/bug',
+            },
         ];
     }
 ]);
@@ -26,7 +31,6 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
 
 app.config(['$routeProvider',
     function($routeProvider) {
-
         $routeProvider
             .when("/lowerthirds", {
                 templateUrl: '/modules/lowerthirds/admin.html',
@@ -34,9 +38,12 @@ app.config(['$routeProvider',
             })
             .when("/grid", {
                 templateUrl: '/modules/grid/admin.html',
-                controller: 'gridCtrl' 
+                controller: 'gridCtrl'
+            })
+            .when("/bug", {
+                templateUrl: '/modules/bug/admin.html',
+                controller: 'bugCtrl'
             })
         .otherwise({redirectTo: '/lowerthirds'});
-
     }
 ]);
