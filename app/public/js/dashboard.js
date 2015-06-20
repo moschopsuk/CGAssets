@@ -11,13 +11,13 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
         $scope.menu = [
             {
                 name:   'Lower Thirds',
-                icon:   'tasks',
+                icon:   'list layout',
                 url:    '/lowerthirds',
             },
             {
-                name:   'Bug',
-                icon:   'bug',
-                url:    '/bug',
+                name:   'Grid',
+                icon:   'grid layout',
+                url:    '/grid',
             },
         ];
     }
@@ -31,6 +31,10 @@ app.config(['$routeProvider',
             .when("/lowerthirds", {
                 templateUrl: '/modules/lowerthirds/admin.html',
                 controller: 'lowerthirdsCtrl'
+            })
+            .when("/grid", {
+                templateUrl: '/modules/grid/admin.html',
+                controller: 'gridCtrl' 
             })
         .otherwise({redirectTo: '/lowerthirds'});
 

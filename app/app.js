@@ -21,6 +21,10 @@ io.on('connection', function(socket) {
 	socket.on("lowerthird", function(payload) {
 		io.sockets.emit("lowerthird", payload);
 	});
+
+	socket.on("grid", function(payload) {
+		io.sockets.emit("grid", payload);
+	});
 });
 
 

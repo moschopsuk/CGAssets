@@ -7,7 +7,12 @@
 @primary-bg:   #cd1d18;
 @secondry:     #fff;
 @secondry-bg:  #000;
- 
+
+/*
+ *===================================
+ *         Lower Thirds
+ *===================================
+ */
 
 .lowerthird {
     min-width: 30%;
@@ -36,3 +41,59 @@
         background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
     }
 }
+/*
+ *===================================
+ *         Grid
+ *===================================
+ */
+
+ .grid {
+
+    width: 650px;
+    text-align: center;
+
+    border-radius: 5px; 
+    border: 8px solid rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+
+    h1 {
+        color:  @primary;
+        text-shadow:1px -1px 0px #000;
+        font-size: 40px;
+        font-size: 2.5vw;
+        font-weight: normal;
+        padding: 5px;
+
+        background-color: @primary-bg;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+    }
+
+    .name, .time {
+        float: left;
+        line-height: 40px;
+        padding-left: 5px;
+        background-color: #4B0082;
+        margin-left: 5px;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.12) 51%, rgba(0, 0, 0, 0.04));
+        font-size: 25px;
+    }
+
+    .name {
+        padding-left: 10px;
+        text-align: left;
+        width: 490px;
+    }
+
+    .time { 
+        width: 130px;
+    }
+
+    .row {       
+        color: #fff;
+        margin-top: 5px;
+    }
+
+    .row:last-child {
+        margin-bottom: 5px;
+    } 
+ }
