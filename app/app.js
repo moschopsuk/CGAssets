@@ -1,6 +1,10 @@
 var express = require('express');
 var socket	= require('socket.io');
 var app 	= express();
+var env 	= require('node-env-file');
+
+//Load up the .env file
+env(__dirname + '/.env');
 
 //Serve content out of public dir
 app.use(express.static('public'));
