@@ -1,1 +1,1 @@
-var app = angular.module('CGApp', ['ngAnimate', 'socket-io']);
+var app = angular.module('CGApp', ['ngAnimate', 'socket-io', 'angular-momentjs']);
