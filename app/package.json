@@ -6,5 +6,8 @@
 		"socket.io": "*",
 		"underscore": "*",
 		"node-env-file": "*"
+	},
+	"scripts": {
+		"start": "node app.js"
 	}
 }
