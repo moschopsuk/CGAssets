@@ -18,19 +18,32 @@ var server = app.listen(3000, function () {
 
 var io = socket.listen(server);
 
+var bug 		= {}
+, 	grid		= {}
+,	lowerthird 	= {}
+;
+
 io.on('connection', function(socket) {
 	console.log("Client Socket Connected");
 
+	//send init states for the CG
+	socket.emit("lowerthird", lowerthird);
+	socket.emit("grid", grid);
+	socket.emit("bug", bug);
+
 	//Forward data to frontend
 	socket.on("lowerthird", function(payload) {
+		lowerthird = payload;
 		io.sockets.emit("lowerthird", payload);
 	});
 
 	socket.on("grid", function(payload) {
+		grid = payload;
 		io.sockets.emit("grid", payload);
 	});
 
 	socket.on("bug", function(payload) {
+		bug = payload;
 		io.sockets.emit("bug", payload);
 	});
 });
