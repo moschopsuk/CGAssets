@@ -17,11 +17,13 @@ var server = app.listen(3000, function () {
 });
 
 var io = socket.listen(server);
-
 var bug         = {}
 ,   grid        = {}
 ,   lowerthird  = {}
 ;
+
+
+require('./Twitter')(io);
 
 io.on('connection', function(socket) {
     console.log("Client Socket Connected");
