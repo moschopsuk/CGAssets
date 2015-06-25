@@ -1,13 +1,16 @@
 var express = require('express');
 var socket  = require('socket.io');
-var app     = express();
 var env     = require('node-env-file');
+var less    = require('less-middleware');
+var app     = express();
 
 //Load up the .env file
 env(__dirname + '/.env');
 
+//Listen for any less and convert it to css
+app.use(less(__dirname + '/public'));
 //Serve content out of public dir
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 var server = app.listen(3000, function () {
     var host = server.address().address;
@@ -23,7 +26,7 @@ var bug         = {}
 ;
 
 
-require('./Twitter')(io);
+//require('./Twitter')(io);
 
 io.on('connection', function(socket) {
     console.log("Client Socket Connected");
@@ -52,8 +55,3 @@ io.on('connection', function(socket) {
         console.log("Updating: bug");
     });
 });
-
-
-
-
-

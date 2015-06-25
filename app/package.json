@@ -6,7 +6,8 @@
 		"socket.io": "*",
 		"underscore": "*",
 		"node-env-file": "*",
-		"node-tweet-stream": "*"
+		"node-tweet-stream": "*",
+		"less-middleware": "*"
 	},
 	"scripts": {
 		"start": "node app.js"
