@@ -4,7 +4,7 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){
         $log.info("LA1TV CG Dashboard Started");
 
-        $scope.isActive = function (viewLocation) { 
+        $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
 
@@ -18,6 +18,11 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
                 name:   'Grid',
                 icon:   'grid layout',
                 url:    '/grid',
+            },
+            {
+                name:   'Twitter',
+                icon:   'twitter',
+                url:    '/twitter',
             },
             {
                 name:   'Bug',
@@ -39,6 +44,9 @@ app.config(['$routeProvider',
             .when("/grid", {
                 templateUrl: '/modules/grid/admin.html',
                 controller: 'gridCtrl'
+            }).when("/twitter", {
+                templateUrl: '/modules/twitter/admin.html',
+                controller: 'twitterCtrl'
             })
             .when("/bug", {
                 templateUrl: '/modules/bug/admin.html',
