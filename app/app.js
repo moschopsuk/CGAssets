@@ -20,10 +20,9 @@ var server = app.listen(3000, function () {
 });
 
 var io = socket.listen(server);
-var bug         = {}
-,   grid        = {}
-,   lowerthird  = {}
-;
+var bug         = {},
+   grid        = {},
+   lowerthird  = {};
 
 
 //require('./Twitter')(io);

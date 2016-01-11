@@ -25,7 +25,7 @@ app.controller('lowerthirdsCtrl', ['$scope', '$log', 'socket', 'localStorageServ
         };
 
         $scope.show = function(side, data) {
-            var payload = { "side": side, data };
+            var payload = { "side": side, "data": data };
             socket.emit('lowerthird', payload);
 
             $log.info("lowerthirds.show()");
