@@ -22,7 +22,8 @@ var server = app.listen(3000, function () {
 var io = socket.listen(server);
 var bug         = {},
    grid        = {},
-   lowerthird  = {};
+   lowerthird  = {},
+   tweet = {};
 
 
 //require('./Twitter')(io);
@@ -34,6 +35,7 @@ io.on('connection', function(socket) {
     socket.emit("lowerthird", lowerthird);
     socket.emit("grid", grid);
     socket.emit("bug", bug);
+    socket.emit("tweet", tweet)
 
     //Forward data to frontend
     socket.on("lowerthird", function(payload) {
@@ -46,6 +48,11 @@ io.on('connection', function(socket) {
         grid = payload;
         io.sockets.emit("grid", payload);
         console.log("Updating: grid");
+    });
+    socket.on("tweet", function(payload) {
+        tweet = payload;
+        io.sockets.emit("tweet", payload);
+        console.log("Updating: tweet");
     });
 
     socket.on("bug", function(payload) {

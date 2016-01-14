@@ -4,12 +4,12 @@ app.directive('twitterDisplay', ['$log', 'socket',
             templateUrl: "/modules/twitter/cg.html",
             replace: true,
             scope: {
-                side: '=',
+            //    side: '=',
                 animation: '=',
             },
             link: function ($scope, element, attrs) {
                 //Apply the animation and position class
-                element.addClass(attrs.side);
+              //  element.addClass(attrs.side);
                 element.addClass(attrs.animation);
 
                 socket.on("tweet", function (payload) {
@@ -21,8 +21,8 @@ app.directive('twitterDisplay', ['$log', 'socket',
                     } else {
                         //Check that we only show LT on the selected side
 
-                            $scope.user = payload.data.user;
                             $scope.tweet = payload.data.tweet;
+                            $scope.user = payload.data.user;
                             $scope.show = true;
 
                     }

@@ -2,19 +2,19 @@
     <div class="ui grid segment">
         <div class="eight wide column">
             <h1>Add Lower Third</h1>
-            <form name="lowerThirdsForm" method="post">
+            <form name="tweetForm" method="post">
                 <div class="ui form">
                     <div class="field">
                         <label>Heading</label>
-                        <input name="heading" placeholder="Heading" type="text" ng-trim="true" ng-model="lowerThird.heading" required />
+                        <input name="heading" placeholder="Heading" type="text" ng-trim="true" ng-model="tweet.tweet" required />
                     </div>
 
                     <div class="field">
                         <label>Sub-Heading</label>
-                        <input name="subHeading" placeholder="Sub Heading" type="text" ng-trim="true" ng-model="lowerThird.subHeading" />
+                        <input name="subHeading" placeholder="Sub Heading" type="text" ng-trim="true" ng-model="tweetForm.user" />
                     </div>
 
-                    <button class="ui blue button" ng-disabled="lowerThirdsForm.$invalid" ng-click="add(lowerThird)" >Add</button>
+                    <button class="ui blue button" ng-disabled="tweetForm.$invalid" ng-click="add(tweet)" >Add</button>
 
                     <!-- Must be div not button to prevent validationj trigger -->
                     <div class="ui icon red button" ng-click='hide()'>Hide</div>
@@ -22,16 +22,16 @@
             </form>
         </div>
         <div class="eight wide column">
-            <h1>Existing Lower Thirds</h1>
+            <h1>Existing Tweets</h1>
 
-            <div class="ui segment slide-top" ng-repeat="third in queuedThirds">
+            <div class="ui segment slide-top" ng-repeat="tweet in queuedTweets">
                 <div class="ui grid">
                     <div class="six wide column">
                         <h2 class="left aligned ui header">
                             <i class="list layout icon"></i>
                             <div class="content">
-                                {{third.heading}}
-                                <div class="sub header">{{third.subHeading}}</div>
+                                {{tweet.tweet}}
+                                <div class="sub header">{{tweet.user}}</div>
                             </div>
                         </h2>
                     </div>
@@ -42,9 +42,7 @@
 
                     <div class="right aligned six wide column">
                         <div class="ui small buttons">
-                            <div class="ui positive button" ng-click="show('left', third)" >Left</div>
-                            <div class="or"></div>
-                            <div class="ui positive button" ng-click="show('right', third)" >Right</div>
+                            <div class="ui positive button" ng-click="show(tweet)" >Left</div>
                         </div>
 
                         <button class="ui icon red small button" ng-click='remove($index)'>

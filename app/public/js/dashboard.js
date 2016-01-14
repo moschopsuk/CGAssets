@@ -44,7 +44,8 @@ app.config(['$routeProvider',
             .when("/grid", {
                 templateUrl: '/modules/grid/admin.html',
                 controller: 'gridCtrl'
-            }).when("/twitter", {
+            })
+            .when("/twitter", {
                 templateUrl: '/modules/twitter/admin.html',
                 controller: 'twitterCtrl'
             })
