@@ -24,8 +24,8 @@ app.controller('twitterCtrl', ['$scope', '$log', 'socket', 'localStorageService'
             $scope.queuedTweets.splice(index, 1);
         };
 
-        $scope.show = function(side, data) {
-            var payload = { "image":image,"data": data };
+        $scope.show = function(data) {
+            var payload = { "side": 'left' ,"data": data };
             socket.emit('tweet', payload);
 
             $log.info("tweet.show()");

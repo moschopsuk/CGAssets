@@ -44,6 +44,41 @@
         background-image: @gradient;
     }
 }
+
+/*
+ *===================================
+ *         Twitter
+ *===================================
+ */
+
+.twitter {
+    min-width: 30%;
+    width: 40%;
+    border-radius: 5px;
+    border-left: 6px solid #fff;
+
+    h1 {
+        color:  @primary;
+        text-shadow:1px -1px 0px #000;
+        font-size: 40px;
+        font-size: 2.5vw;
+        font-weight: normal;
+        padding: 5px;
+
+        background-color: @primary-bg;
+        background-image: @gradient;
+    }
+
+    h2 {
+        color: @secondry;
+        font-size: 35px;
+        font-weight: normal;
+        padding: 5px;
+
+        background-color: @secondry-bg;
+        background-image: @gradient;
+    }
+}
 /*
  *===================================
  *         Grid
@@ -55,7 +90,7 @@
     width: 650px;
     text-align: center;
 
-    border-radius: 5px; 
+    border-radius: 5px;
     border: 8px solid rgba(0, 0, 0, 0.4);
     background: rgba(0, 0, 0, 0.4);
     background-clip: padding-box;
@@ -87,19 +122,19 @@
         width: 498px;
     }
 
-    .time { 
+    .time {
         width: 130px;
         margin-left: 5px;
     }
 
-    .row {       
+    .row {
         color: #fff;
         margin-top: 5px;
     }
 
     .row:last-child {
         margin-bottom: 5px;
-    } 
+    }
  }
 
  /**************************************************/
@@ -135,12 +170,12 @@
 
 //CSS pulsate live colour
 @-webkit-keyframes pulse-color {
-    0% { 
+    0% {
         background-color: lighten(@primary-bg, 7.5%);
         background-image: @gradient;
     }
 
-    50% { 
+    50% {
         background: darken(@primary-bg, 3.5%);
         background-image: @gradient;
     }

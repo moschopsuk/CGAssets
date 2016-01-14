@@ -35,8 +35,7 @@ io.on('connection', function(socket) {
     socket.emit("lowerthird", lowerthird);
     socket.emit("grid", grid);
     socket.emit("bug", bug);
-    socket.emit("tweet", tweet)
-
+    socket.emit("tweet", tweet);
     //Forward data to frontend
     socket.on("lowerthird", function(payload) {
         lowerthird = payload;
