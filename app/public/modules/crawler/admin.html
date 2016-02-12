@@ -1,0 +1,53 @@
+    <div class="column">
+        <div class="ui grid segment">
+            <div class="five wide column">
+                <h1>Add Crawler Item</h1>
+                <form name="crawlerItemForm">
+                    <div class="ui form">
+
+                        <div class="field">
+                            <label>Text</label>
+                            <input name="subHeading" placeholder="Lorem ipsum dolor sit amet, consectetur..." type="text" ng-model="newItem.text" />
+                        </div>
+
+                        <button class="ui blue button" ng-click="add(newItem)" > Add</button>
+
+                    </div>
+                </form>
+            </div>
+            <div class="eight wide column">
+                <h1>Current Items</h1>
+
+                <h2 ng-if="crawlerItems.length == 0">No Crawler Items added yet.</h2>
+
+                <div class="ui segment slide-top" ng-repeat="item in crawlerItems">
+                    <div class="ui grid">
+                        <div class="ten wide column">
+                            <h2 class="left aligned ui header">
+                                <i class="list layout icon"></i>
+                                <div class="content">
+                                    {{item.text}}
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="right aligned six wide column">
+                            <div class="ui small buttons">
+                                <button class="ui green button" ng-click="enabled($index, true)" ng-disabled="item.enabled" > Include </button>
+                                <button class="ui red button" ng-click="enabled($index, false)" ng-disabled="!item.enabled" > Exclude </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h1>Toggle Crawler</h1>
+                <button class="ui green button" ng-click="show()" > Show</button>
+                <button class="ui red button" ng-click="hide()" > Hide</button>
+
+                <br />
+                <br />
+
+                {{currentText}}
+            </div>
+        </div>
+    </div>

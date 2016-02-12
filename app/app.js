@@ -23,6 +23,7 @@ var io = socket.listen(server);
 var bug         = {}
 ,   grid        = {}
 ,   lowerthird  = {}
+,   crawler  = {}
 ;
 
 
@@ -35,6 +36,7 @@ io.on('connection', function(socket) {
     socket.emit("lowerthird", lowerthird);
     socket.emit("grid", grid);
     socket.emit("bug", bug);
+    socket.emit("crawler", crawler);
 
     //Forward data to frontend
     socket.on("lowerthird", function(payload) {
@@ -53,5 +55,11 @@ io.on('connection', function(socket) {
         bug = payload;
         io.sockets.emit("bug", payload);
         console.log("Updating: bug");
+    });
+
+    socket.on("crawler", function(payload) {
+        crawler = payload;
+        io.sockets.emit("crawler", payload);
+        console.log("Updating: crawler");
     });
 });

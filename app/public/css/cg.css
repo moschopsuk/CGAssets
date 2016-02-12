@@ -26,7 +26,7 @@ h1, h2, h3, h4 {
 /*              [Page Center]                     */
 /**************************************************/
 
-body, html, .wrapper { 
+body, html, .wrapper {
   width: 100%;
   height: 100%
 }
@@ -64,6 +64,10 @@ body, html, .wrapper {
 
 .bottom {
     bottom: 50px;
+}
+
+.rock-bottom {
+    bottom: 0px;
 }
 
 .top {
