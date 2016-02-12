@@ -4,7 +4,7 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){
         $log.info("LA1TV CG Dashboard Started");
 
-        $scope.isActive = function (viewLocation) { 
+        $scope.isActive = function (viewLocation) {
             return viewLocation === $location.path();
         };
 
@@ -23,6 +23,11 @@ app.controller('DashCtrl', ['$scope', '$log', '$location',
                 name:   'Bug',
                 icon:   'bug',
                 url:    '/bug',
+            },
+            {
+                name:   'Crawler',
+                icon:   'newspaper',
+                url:    '/crawler',
             },
         ];
     }
@@ -43,6 +48,10 @@ app.config(['$routeProvider',
             .when("/bug", {
                 templateUrl: '/modules/bug/admin.html',
                 controller: 'bugCtrl'
+            })
+            .when("/crawler", {
+                templateUrl: '/modules/crawler/admin.html',
+                controller: 'crawlerCtrl'
             })
         .otherwise({redirectTo: '/lowerthirds'});
     }
