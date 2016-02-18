@@ -1,4 +1,4 @@
-app.directive('lowerThirds', ['$log', 'socket', 
+app.directive('lowerThirds', ['$log', 'socket',
     function ($log, socket) {
         return {
             templateUrl: "/modules/lowerthirds/cg.html",
@@ -12,6 +12,7 @@ app.directive('lowerThirds', ['$log', 'socket',
                 element.addClass(attrs.side);
                 element.addClass(attrs.animation);
 
+
                 socket.on("lowerthird", function (payload) {
 
                     if (payload === "hide") {
@@ -24,9 +25,10 @@ app.directive('lowerThirds', ['$log', 'socket',
                             $scope.heading = payload.data.heading;
                             $scope.subHeading = payload.data.subHeading;
                             $scope.show = true;
+                            $log.info("Showing Lower Thirds");
                         }
                     }
-                    
+
                 });
             }
         };

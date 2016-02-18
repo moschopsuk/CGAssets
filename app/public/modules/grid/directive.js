@@ -1,4 +1,4 @@
-app.directive('grid', ['$log', '$timeout', 'socket', 
+app.directive('grid', ['$log', '$timeout', 'socket',
     function ($log, $timeout, socket) {
         return {
             templateUrl: "/modules/grid/cg.html",
@@ -16,10 +16,13 @@ app.directive('grid', ['$log', '$timeout', 'socket',
                         //We first remove every element with a delay
                         $scope.grid = {};
                         $scope.show = false;
+
+                        $log.info("Hiding grid.");
                     } else {
                         $scope.show = true;
                         $scope.grid = payload;
-                    }          
+                        $log.info("Showing grid.");
+                    }
                 });
             }
         };

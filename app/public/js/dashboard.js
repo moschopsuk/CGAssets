@@ -1,4 +1,4 @@
-var app = angular.module('DashboardApp', ['ngRoute', 'socket-io', 'ngAnimate', 'LocalStorageModule', 'angularify.semantic']);
+var app = angular.module('DashboardApp', ['ngRoute', 'socket-io', 'ngAnimate', 'ngResource', 'LocalStorageModule', 'angularify.semantic']);
 
 app.controller('DashCtrl', ['$scope', '$log', '$location',
     function($scope, $log, $location){

@@ -21,9 +21,9 @@ var server = app.listen(3000, function () {
 
 var io = socket.listen(server);
 var bug         = {}
-,   grid        = {}
-,   lowerthird  = {}
-,   crawler  = {}
+,   grid        = "hide"
+,   lowerthird  = "hide"
+,   crawler     = "hide"
 ;
 
 

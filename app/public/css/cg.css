@@ -56,6 +56,11 @@ body, html, .wrapper {
     left: 50px;
 }
 
+.rock-left{
+    position: absolute;
+    left: 0px;
+}
+
 .right {
     position: absolute;
     right: 50px;
