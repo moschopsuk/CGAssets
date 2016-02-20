@@ -10,11 +10,13 @@ app.directive('crawler', ['$log', 'socket',
                 //Apply the animation and position class
                 //element.addClass(attrs.animation);
 
-                element.marquee({
-                  duration: 10000,
-                  duplicated: false,
-                  allowCss3Support: false,
-                });
+                // element.marquee({
+                //   duration: 10000,
+                //   duplicated: false,
+                //   allowCss3Support: false,
+                // });
+
+                $scope.show = false;
 
                 socket.on("crawler", function (payload) {
 
@@ -25,7 +27,13 @@ app.directive('crawler', ['$log', 'socket',
                     } else {
                           $scope.text = payload.text;
                           $scope.show = true;
-                          $log.info("Showing Crawler");
+
+                          // element
+                          //   .marquee()
+                          //   .bind('finished', function() {
+                          //     $scope.show = false;
+                          //   });
+                          $log.info("Showing Crawler: " + $scope.text.length);
                     }
 
                 });

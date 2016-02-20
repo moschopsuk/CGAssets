@@ -14,7 +14,7 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
             localStorageService.set('crawlerItems', $scope.crawlerItems);
         });
 
-        var keySecret = btoa('ikwADKRaGcXE6NW3fcyJlRDpM:A3zgVDaz3eiiYAtDgdeaBotewWqxh57tjq1gFptwff7e78Owl6');
+        var keySecret = btoa('');
         var twitterAuth = $resource('https://api.twitter.com/oauth2/token', null, {
           getBearer: {
                 method: 'POST',
@@ -87,7 +87,7 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
 
           for (var iItem = 0; iItem < $scope.crawlerItems.length; iItem++) {
             if ($scope.crawlerItems[iItem].enabled) {
-              allText += '   ' + $scope.crawlerItems[iItem].text;
+              allText += '   ' + $scope.crawlerItems[iItem].text.replace(/(?:\r\n|\r|\n)/g, ' ');
             }
           }
 
@@ -105,6 +105,23 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
             socket.emit('crawler', 'hide');
             $scope.crawlerActive = false;
             $log.info("crawler.hide()");
+        };
+
+        $scope.showThird = function(side, item) {
+            var data = {
+              "heading": item.text
+            }
+            var payload = { "side": side, data };
+            socket.emit('lowerthird', payload);
+
+            $log.info("lowerthirds.show()");
+            $log.info(payload);
+        };
+
+        $scope.hideThird = function() {
+            socket.emit('lowerthird', 'hide');
+
+            $log.info("lowerthirds.hide()");
         };
     }
 ]);

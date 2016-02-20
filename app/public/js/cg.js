@@ -1,4 +1,4 @@
-var app = angular.module('CGApp', ['ngAnimate', 'socket-io', 'angular-momentjs']);
+var app = angular.module('CGApp', ['ngAnimate', 'socket-io', 'angular-momentjs', 'angular-marquee']);
 
 
 app.controller('CGCtrl', ['$scope', '$log', '$location',
