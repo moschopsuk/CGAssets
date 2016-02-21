@@ -13,6 +13,4 @@ Run "vagrant up" to install local machine and all custom configurations for the 
 
 
 CasparCG HTML layer should point to http://127.0.0.1:3000/cg  
-Admin panel is accessed from http://127.0.0.1:3000/admin
-
-
+Admin panel is accessed from http://127.0.0.1:3000/
