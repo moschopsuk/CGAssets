@@ -9,14 +9,7 @@ app.directive('crawler', ['$log', 'socket',
             link: function ($scope, element, attrs) {
                 //Apply the animation and position class
                 element.addClass(attrs.animation);
-
-                // element.marquee({
-                //   duration: 10000,
-                //   duplicated: false,
-                //   allowCss3Support: false,
-                // });
-
-                //$scope.show = false;
+                $log.info(element);
 
                 socket.on("crawler", function (payload) {
 
@@ -25,14 +18,16 @@ app.directive('crawler', ['$log', 'socket',
                         $scope.show = false;
                         $log.info("Hiding Crawler");
                     } else {
+                          var scrollTime = 15;
+                          if (payload.text.length > 15) {
+                            scrollTime = payload.text.length*0.2;
+                          }
+
+                          element.children().css("animation", "scroll-left " + scrollTime + "s linear infinite");
+
                           $scope.text = payload.text;
                           $scope.show = true;
 
-                          // element
-                          //   .marquee()
-                          //   .bind('finished', function() {
-                          //     $scope.show = false;
-                          //   });
                           $log.info("Showing Crawler: " + $scope.text.length);
                     }
 

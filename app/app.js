@@ -26,9 +26,6 @@ var bug         = {}
 ,   crawler     = "hide"
 ;
 
-
-//require('./Twitter')(io);
-
 io.on('connection', function(socket) {
     console.log("Client Socket Connected");
 

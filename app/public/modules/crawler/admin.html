@@ -61,9 +61,13 @@
             </div>
         </div>
         <div class="nine wide column">
-            <h1>Current Items</h1>
+            <h1>
+              Current Items <div class="ui green button" ng-click="excludeAll()" >Exlude All</div>
+            </h1> 
 
-            <h2 ng-if="crawlerItems.length == 0">No Crawler Items added yet.</h2>
+            <h2 ng-if="crawlerItems.length == 0">
+              No Crawler Items added yet.
+            </h2>
 
             <div class="ui grid slide-top" ng-repeat="item in crawlerItems">
                 <div class="ui grid">
@@ -86,6 +90,9 @@
                             <div class="or"></div>
                             <div class="ui positive button" ng-click="showThird('right', item)" >Right</div>
                         </div>
+                        <button class="ui icon red small button" ng-click='remove($index)'>
+                            <i class="delete icon"></i>
+                        </button>
                     </div>
                 </div>
             </div>

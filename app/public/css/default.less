@@ -34,7 +34,8 @@
    height: 100%;
    margin: 0;
    opacity: 1;
-   line-height: 50px;
+   line-height: 55px;
+   bottom: 5px;
    text-align: center;
    color:  @primary;
    text-shadow:1px -1px 0px #000;
@@ -48,17 +49,17 @@
    -moz-animation: scroll-left 30s linear infinite;
    -webkit-animation: scroll-left 30s linear infinite;
    animation: scroll-left 30s linear infinite;
- }
- /* Move it (define the animation) */
- @-moz-keyframes scroll-left {
+   }
+   /* Move it (define the animation) */
+   @-moz-keyframes scroll-left {
    0%   { -moz-transform: translateX(1280px); }
    100% { -moz-transform: translateX(-100%); }
- }
- @-webkit-keyframes scroll-left {
+   }
+   @-webkit-keyframes scroll-left {
    0%   { -webkit-transform: translateX(1280px); }
    100% { -webkit-transform: translateX(-100%); }
- }
- @keyframes scroll-left {
+   }
+   @keyframes scroll-left {
    0%   {
      -moz-transform: translateX(1280px); /* Browser bug fix */
      -webkit-transform: translateX(1280px); /* Browser bug fix */

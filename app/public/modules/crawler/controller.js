@@ -16,7 +16,7 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
 
         var keySecret = btoa("ikwADKRaGcXE6NW3fcyJlRDpM:A3zgVDaz3eiiYAtDgdeaBotewWqxh57tjq1gFptwff7e78Owl6");
         var twitterAuth = $resource('https://api.twitter.com/oauth2/token', null, {
-          getBearer: { 
+          getBearer: {
                 method: 'POST',
                 headers: {
                     'Authorization': 'Basic ' + keySecret,
@@ -107,6 +107,10 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
             $log.info("crawler.hide()");
         };
 
+        $scope.remove = function(index){
+            $scope.crawlerItems.splice(index, 1);
+        };
+
         $scope.showThird = function(side, item) {
             var data = {
               "heading": item.text
@@ -123,5 +127,12 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
 
             $log.info("lowerthirds.hide()");
         };
+
+        $scope.excludeAll = function() {
+          for (var iItem = 0; iItem < $scope.crawlerItems.length; iItem++) {
+            $scope.crawlerItems[iItem].enabled = false;
+          }
+
+        }
     }
 ]);
