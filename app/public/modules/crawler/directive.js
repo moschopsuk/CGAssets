@@ -8,7 +8,7 @@ app.directive('crawler', ['$log', 'socket',
             },
             link: function ($scope, element, attrs) {
                 //Apply the animation and position class
-                //element.addClass(attrs.animation);
+                element.addClass(attrs.animation);
 
                 // element.marquee({
                 //   duration: 10000,
@@ -16,7 +16,7 @@ app.directive('crawler', ['$log', 'socket',
                 //   allowCss3Support: false,
                 // });
 
-                $scope.show = false;
+                //$scope.show = false;
 
                 socket.on("crawler", function (payload) {
 

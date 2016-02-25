@@ -4,7 +4,7 @@
 
 
 @primary:      #ffffff;
-@primary-bg:   #006088;
+@primary-bg:   #ff0000;
 @secondry:     #fff;
 @secondry-bg:  #000;
 
@@ -15,27 +15,62 @@
  *===================================
  */
 
-.crawler {
-    width: 100%;
-    height:55px;
 
-    background-color: @primary-bg;
-    background-image: @gradient;
+ .scroll-left {
+   height: 50px;
+   width: 100%:
+   overflow: hidden;
+   position: relative;
 
-    .marquee {
-      overflow: hidden;
+   background-color: @primary-bg;
+   background-image: @gradient;
+   opacity: 0.6;
+ }
 
-      width: 100%;
+ .scroll-left p {
+   position: absolute;
+   width: auto;
+   white-space: nowrap;
+   height: 100%;
+   margin: 0;
+   opacity: 1;
+   line-height: 50px;
+   text-align: center;
+   color:  @primary;
+   text-shadow:1px -1px 0px #000;
+   font-size: 40px;
+   font-weight: normal;
+   /* Starting position */
+   -moz-transform:translateX(100%);
+   -webkit-transform:translateX(100%);
+   transform:translateX(100%);
+   /* Apply animation to this element */
+   -moz-animation: scroll-left 30s linear infinite;
+   -webkit-animation: scroll-left 30s linear infinite;
+   animation: scroll-left 30s linear infinite;
+ }
+ /* Move it (define the animation) */
+ @-moz-keyframes scroll-left {
+   0%   { -moz-transform: translateX(1280px); }
+   100% { -moz-transform: translateX(-100%); }
+ }
+ @-webkit-keyframes scroll-left {
+   0%   { -webkit-transform: translateX(1280px); }
+   100% { -webkit-transform: translateX(-100%); }
+ }
+ @keyframes scroll-left {
+   0%   {
+     -moz-transform: translateX(1280px); /* Browser bug fix */
+     -webkit-transform: translateX(1280px); /* Browser bug fix */
+     transform: translateX(1280px);
+   }
+   100% {
+     -moz-transform: translateX(-100%); /* Browser bug fix */
+     -webkit-transform: translateX(-100%); /* Browser bug fix */
+     transform: translateX(-100%);
+   }
+ }
 
-      color:  @primary;
-      text-shadow:1px -1px 0px #000;
-      font-size: 40px;
-      //font-size: 2.5vw;
-      font-weight: normal;
-
-      padding: 5px
-    }
-}
 /*
  *===================================
  *         Lower Thirds

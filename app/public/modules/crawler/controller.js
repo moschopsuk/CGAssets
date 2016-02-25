@@ -14,9 +14,9 @@ app.controller('crawlerCtrl', ['$scope', '$log', '$resource', 'socket', 'localSt
             localStorageService.set('crawlerItems', $scope.crawlerItems);
         });
 
-        var keySecret = btoa('');
+        var keySecret = btoa("ikwADKRaGcXE6NW3fcyJlRDpM:A3zgVDaz3eiiYAtDgdeaBotewWqxh57tjq1gFptwff7e78Owl6");
         var twitterAuth = $resource('https://api.twitter.com/oauth2/token', null, {
-          getBearer: {
+          getBearer: { 
                 method: 'POST',
                 headers: {
                     'Authorization': 'Basic ' + keySecret,
